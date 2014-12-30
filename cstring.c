@@ -1,18 +1,19 @@
 /*
- * mstring.c
+ * cstring.c
  *
  *  Created on: Dec 30, 2014
  *      Author: muneer
  */
 
+#include "cstring.h"
+
 #include <string.h>
 #include <stdlib.h>
-#include "mstring.h"
 
-t_mstring *mstring_create()
+t_cstring *cstring_create()
 {
-	t_mstring *str;
-	str = (t_mstring *) malloc(sizeof(t_mstring));
+	t_cstring *str;
+	str = (t_cstring *) malloc(sizeof(t_cstring));
 	str->size = 1;
 	str->value = (char *) malloc(1);
 	str->value[0] = '\0';
@@ -20,7 +21,7 @@ t_mstring *mstring_create()
 	return str;
 }
 
-int mstring_delete(t_mstring *string) {
+int cstring_delete(t_cstring *string) {
 	if (string != NULL) {
 		if (string->value != NULL)
 			free(string->value);
@@ -29,7 +30,7 @@ int mstring_delete(t_mstring *string) {
 	return 0;
 }
 
-int mstring_add(t_mstring *string, char *s)
+int cstring_add(t_cstring *string, char *s)
 {
 	int new_size = string->size + strlen(s);
 	string->value = (char *) realloc(string->value, new_size);
