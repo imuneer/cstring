@@ -31,5 +31,6 @@ int main()
 
 
 	mstring_delete(s);
+	mstring_delete(s2);
 	return 0;
 }

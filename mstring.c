@@ -11,8 +11,8 @@
 
 t_mstring *mstring_create()
 {
-	struct String *str;
-	str = (struct String *) malloc(sizeof(struct String));
+	t_mstring *str;
+	str = (t_mstring *) malloc(sizeof(t_mstring));
 	str->size = 1;
 	str->value = (char *) malloc(1);
 	str->value[0] = '\0';
